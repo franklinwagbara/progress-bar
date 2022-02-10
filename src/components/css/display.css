@@ -1,0 +1,25 @@
+.count-down {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  line-height: 2.4rem;
+}
+
+.count-down div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2rem;
+}
+
+.count-down div p {
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.count-down div span {
+  font-size: 1.5rem;
+}
