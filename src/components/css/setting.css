@@ -1,0 +1,39 @@
+.setting {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.setting button {
+  margin-top: 5rem;
+  width: 12rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border-style: none;
+  height: 3rem;
+  color: beige;
+  font-weight: inherit;
+}
+
+.opaque {
+  background-color: rgba(7, 126, 86, 1);
+}
+
+.transparent {
+  background-color: rgba(7, 126, 86, 0.5);
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.setting button:hover {
+  background-color: rgba(7, 126, 86, 1);
+  cursor: pointer;
+}

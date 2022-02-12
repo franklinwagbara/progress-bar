@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./css/display.css";
+import format from "../utils/format";
 
 class Timer extends Component {
   state = { days: 0, hours: 0, minutes: 0, seconds: 0 };
@@ -22,29 +23,24 @@ class Timer extends Component {
     this.setState({ days, hours, minutes, seconds });
   };
 
-  format(val) {
-    if (val < 10) return `0${val}`;
-    return val;
-  }
-
   render() {
     const time = new Date();
     return (
       <div className="count-down">
         <div id="days">
-          <p>{this.format(this.state.days)}</p>
+          <p>{format(this.state.days)}</p>
           <span>days</span>
         </div>
         <div id="hours">
-          <p>{this.format(this.state.hours)}</p>
+          <p>{format(this.state.hours)}</p>
           <span>hours</span>
         </div>
         <div id="minutes">
-          <p>{this.format(this.state.minutes)}</p>
+          <p>{format(this.state.minutes)}</p>
           <span>minutes</span>
         </div>
         <div id="seconds">
-          <p>{this.format(this.state.seconds)}</p>
+          <p>{format(this.state.seconds)}</p>
           <span>seconds</span>
         </div>
       </div>
