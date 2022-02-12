@@ -9,18 +9,24 @@ class Setting extends Component {
     hour: 0,
     minute: 0,
     second: 0,
+    set: 0,
   };
 
-  handleClick = () => {
-    if (this.state.enable == 1) {
+  handleSubmit = () => {
+    const { hour, minute, second, enable } = this.state;
+    if (enable == 1) {
+      if (hour === 0 && minute === 0 && second === 0) {
+        alert("Time can not be zero!");
+        return;
+      }
       const time = new Date();
-      time.setHours(this.state.hour, this.state.minute, this.state.second);
+      time.setHours(hour, minute, second);
       this.props.onSetTime(time);
-      this.setState({ time });
+      this.setState({ time, set: 1 });
       return;
     }
-    const enable = this.state.enable ^ 1;
-    this.setState({ enable });
+
+    this.setState({ enable: enable ^ 1 });
   };
 
   handleChange = (e) => {
@@ -35,6 +41,11 @@ class Setting extends Component {
       this.setState({ second });
     }
   };
+
+  handleStart = () => {
+    this.setState({ set: 0, enable: 0 });
+    this.props.onStart();
+  };
   render() {
     let counter = 0;
     let counter2 = 0;
@@ -43,7 +54,8 @@ class Setting extends Component {
     let displayPanel = this.state.enable === 0 ? "hide" : "show";
     let command = this.state.enable === 0 ? "Enable" : "Set";
     let opacity = this.state.enable === 0 ? "transparent" : "opaque";
-
+    if (this.state.set === 1) opacity = "hide";
+    let startClass = this.state.set === 0 ? "hide" : "show";
     return (
       <div className="setting">
         <div className={displayPanel}>
@@ -51,8 +63,8 @@ class Setting extends Component {
           <select
             name="hours"
             id="hours"
-            value={this.state.hour}
             onChange={this.handleChange}
+            value={this.state.hour}
           >
             {new Array(23).fill(0).map((val) => (
               <option key={counter++}>{format(counter)}</option>
@@ -85,10 +97,18 @@ class Setting extends Component {
         <button
           id="enable"
           className={opacity}
-          onClick={this.handleClick}
+          onClick={this.handleSubmit}
           value="Enable"
         >
           {command}
+        </button>
+        <button
+          id="start"
+          className={startClass}
+          onClick={this.handleStart}
+          value="start"
+        >
+          Start
         </button>
       </div>
     );
