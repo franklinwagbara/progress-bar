@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Timer from "./components/timer";
 import Setting from "./components/setting";
+import "./App.css";
 
 class App extends Component {
   state = {
@@ -23,13 +24,14 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <Timer
           state={this.state.state}
           setTime={this.state.setTime}
           startTime={this.state.startTime}
         />
         <Setting onStart={this.handleStart} onSetTime={this.handleSetTime} />
+        <div className="footer">@developed by: Franklin</div>
       </div>
     );
   }
