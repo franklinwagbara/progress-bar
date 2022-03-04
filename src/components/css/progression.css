@@ -1,0 +1,62 @@
+.pg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 !important;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.pg div {
+  width: 40px;
+  height: 10px;
+  padding: 0 !important;
+  border-radius: 5px;
+}
+
+.color-1 {
+  background: linear-gradient(to right, #4962ff, #4962ff);
+}
+
+.color-2 {
+  background: linear-gradient(to right, #4962ff, #4db1d9);
+}
+
+.color-3 {
+  background: linear-gradient(to right, #4998ff, #4dd9d2);
+}
+
+.color-4 {
+  background: linear-gradient(to right, #4992ff, #49e4dc);
+}
+
+.color-5 {
+  background: linear-gradient(to right, #49b6ff, #7aeee8);
+}
+
+.color-6 {
+  background: linear-gradient(to right, #49cbff, #7aeee8);
+}
+
+.color-7 {
+  background: linear-gradient(to right, #49e4ff, #6bece6);
+}
+
+.color-8 {
+  background: linear-gradient(to right, #49e4ff, #03f7ea);
+}
+
+.color-9 {
+  background: linear-gradient(to right, #00fff2, #03f7ea);
+}
+
+.color-10 {
+  background-color: #00ffd5;
+}
+.dark {
+  background-color: black;
+}
+
+.pg + span {
+  font-size: smaller;
+}
