@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./css/mainArea.css";
 
 const MainArea = ({ task, onSubmit, end }) => {
+  console.log(task);
   return (
     <div>
       <h3>Work Area</h3>

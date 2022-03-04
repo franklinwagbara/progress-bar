@@ -55,6 +55,7 @@ class App extends Component {
   render() {
     const { tasks } = this.state;
     const { heading, message, level, count, end } = this.state.progressBar;
+    const { progressBar } = this.state;
     return (
       <div className="wrapper ">
         <div className="grid">
@@ -70,7 +71,7 @@ class App extends Component {
             <MainArea
               onSubmit={this.handleSubmit}
               end={end}
-              task={tasks && this.progressBar && tasks[level]}
+              task={tasks && progressBar && tasks[level]}
             />
           </div>
           <div className="checklist common">

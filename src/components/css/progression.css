@@ -54,7 +54,7 @@
   background-color: #00ffd5;
 }
 .dark {
-  background-color: black;
+  background-color: rgba(20, 20, 20, 0.315);
 }
 
 .pg + span {
